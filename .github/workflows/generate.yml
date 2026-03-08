@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: latest
           cache: 'yarn'
-          cache-dependency-path: AbgeordnetenWatchDotNet.ApiSpec/yarn.lock
+          cache-dependency-path: yarn.lock
 
       - name: Prepare yarn
         run: corepack prepare $(node -p "require('./package.json').packageManager") --activate
