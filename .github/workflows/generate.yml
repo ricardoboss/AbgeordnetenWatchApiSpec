@@ -9,6 +9,7 @@ on:
       - 'tspconfig.yaml'
       - 'package.json'
       - 'yarn.lock'
+      - '.github/workflows/generate.yml'
 
   pull_request:
     branches:
@@ -18,6 +19,7 @@ on:
       - 'tspconfig.yaml'
       - 'package.json'
       - 'yarn.lock'
+      - '.github/workflows/generate.yml'
 
 jobs:
   generate:
@@ -42,6 +44,7 @@ jobs:
         run: yarn build-trace
 
       - name: Commit changes
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git add generated/openapi.yaml
           git diff --staged --exit-code || git commit -m "chore: regenerate openapi.yaml" && git push
