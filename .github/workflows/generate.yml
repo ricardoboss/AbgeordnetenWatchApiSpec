@@ -1,0 +1,47 @@
+name: Generate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.tsp'
+      - 'tspconfig.yaml'
+      - 'package.json'
+      - 'yarn.lock'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**/*.tsp'
+      - 'tspconfig.yaml'
+      - 'package.json'
+      - 'yarn.lock'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: 'true'
+
+      - uses: actions/setup-node@v6
+        with:
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build-trace
+
+      - name: Commit changes
+        run: |
+          git add generated/openapi.yaml
+          git diff --staged --exit-code || git commit -m "chore: regenerate openapi.yaml" && git push
