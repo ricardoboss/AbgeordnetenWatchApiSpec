@@ -55,6 +55,15 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'push'
         run: |
           git add generated/openapi.yaml
-          git diff --staged --exit-code && exit 0
+
+          if git diff --staged --exit-code; then
+            echo "::notice::No changes to openapi.yaml, skipping commit"
+            exit 0
+          fi
+
           git commit -m "chore: regenerate openapi.yaml"
           git push origin HEAD:${{ github.head_ref || github.ref_name }}
+
+          echo "::notice::Committed and pushed regenerated openapi.yaml"
+          echo "### OpenAPI spec regenerated" >> $GITHUB_STEP_SUMMARY
+          echo "Committed updated \`generated/openapi.yaml\`" >> $GITHUB_STEP_SUMMARY
