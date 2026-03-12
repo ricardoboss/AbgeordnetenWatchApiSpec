@@ -891,7 +891,12 @@ paths:
         - $ref: '#/components/parameters/PaginationQueryOptions.page'
         - $ref: '#/components/parameters/PaginationQueryOptions.pager_limit'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProject'
-        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectType'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabel'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelStartsWith'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelContains'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelEndsWith'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelIn'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelNotIn'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectElectionDate'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectElectionDateGreaterThan'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectElectionDateGreaterThanOrEqual'
@@ -1571,6 +1576,48 @@ components:
         type: string
         format: date
       explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabel:
+      name: currentProjectLabel
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabelContains:
+      name: current_project[entity.label][cn]
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabelEndsWith:
+      name: current_project[entity.label][ew]
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabelIn:
+      name: current_project[entity.label][in]
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabelNotIn:
+      name: current_project[entity.label][notin]
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectLabelStartsWith:
+      name: current_project[entity.label][sw]
+      in: query
+      required: false
+      schema:
+        type: string
+      explode: false
     CurrentProjectReferenceQueryOptions.currentProjectParliament:
       name: current_project[entity.parliament]
       in: query
@@ -1624,16 +1671,6 @@ components:
       schema:
         type: string
         format: date
-      explode: false
-    CurrentProjectReferenceQueryOptions.currentProjectType:
-      name: current_project[entity.type]
-      in: query
-      required: false
-      schema:
-        type: string
-        enum:
-          - election
-          - legislature
       explode: false
     DescriptionQueryOptions.description:
       name: description

@@ -10,8 +10,23 @@ model CurrentProjectReferenceQueryOptions {
 	@query("current_project")
 	currentProject?: integer; // uint32;
 
-	@query("current_project[entity.type]")
-	currentProjectType?: ParliamentPeriodType;
+	@query
+	currentProjectLabel?: string;
+
+	@query("current_project[entity.label][sw]")
+	currentProjectLabelStartsWith?: string;
+
+	@query("current_project[entity.label][cn]")
+	currentProjectLabelContains?: string;
+
+	@query("current_project[entity.label][ew]")
+	currentProjectLabelEndsWith?: string;
+
+	@query("current_project[entity.label][in]")
+	currentProjectLabelIn?: string;
+
+	@query("current_project[entity.label][notin]")
+	currentProjectLabelNotIn?: string;
 
 	@query("current_project[entity.election_date]")
 	currentProjectElectionDate?: plainDate;
