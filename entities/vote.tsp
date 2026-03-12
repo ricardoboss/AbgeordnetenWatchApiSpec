@@ -7,21 +7,17 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model Vote extends Entity {
-	entity_type: "vote";
+  entity_type: "vote";
+  mandate: SubReference<CandidacyMandate>;
+  fraction: Reference<Fraction>;
+  poll: Reference<Poll>;
+  vote: VoteResult;
 
-	mandate: SubReference<CandidacyMandate>;
+  @encodedName("application/json", "reason_no_show")
+  reasonNoShow: NoShowReason | null;
 
-	fraction: Reference<Fraction>;
-
-	poll: Reference<Poll>;
-
-	vote: VoteResult;
-
-	@encodedName("application/json", "reason_no_show")
-	reasonNoShow: NoShowReason | null;
-
-	@encodedName("application/json", "reason_no_show_other")
-	reasonNoShowOther: string | null;
+  @encodedName("application/json", "reason_no_show_other")
+  reasonNoShowOther: string | null;
 }
 
 alias VoteResult = "yes" | "no" | "no_show";

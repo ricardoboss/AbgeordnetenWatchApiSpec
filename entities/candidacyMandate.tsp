@@ -11,34 +11,33 @@ namespace AbgeordnetenWatch;
 alias CandidacyMandateType = "candidacy" | "mandate";
 
 model CandidacyMandate extends Entity {
-	entity_type: "candidacy_mandate";
+  entity_type: "candidacy_mandate";
 
-	@encodedName("application/json", "id_external_administration")
-	idExternalAdministration: string;
+  @encodedName("application/json", "id_external_administration")
+  idExternalAdministration: string;
 
-	@encodedName("application/json", "id_external_administration_description")
-	idExternalAdministrationDescription: string;
+  @encodedName("application/json", "id_external_administration_description")
+  idExternalAdministrationDescription: string;
 
-	type: CandidacyMandateType;
+  type: CandidacyMandateType;
 
-	@encodedName("application/json", "parliament_period")
-	parliamentPeriod: Reference<ParliamentPeriod>;
+  @encodedName("application/json", "parliament_period")
+  parliamentPeriod: Reference<ParliamentPeriod>;
 
-	politician: Reference<Politician>;
+  politician: Reference<Politician>;
+  party: Reference<Party>;
 
-	party: Reference<Party>;
+  @encodedName("application/json", "start_date")
+  startDate: plainDate | null;
 
-	@encodedName("application/json", "start_date")
-	startDate: plainDate | null;
+  @encodedName("application/json", "end_date")
+  endDate: plainDate | null;
 
-	@encodedName("application/json", "end_date")
-	endDate: plainDate | null;
+  info: string;
 
-	info: string;
+  @encodedName("application/json", "electoral_data")
+  electoralData: ElectoralData;
 
-	@encodedName("application/json", "electoral_data")
-	electoralData: ElectoralData;
-
-	@encodedName("application/json", "fraction_membership")
-	fractionMembership: FractionMembership[];
+  @encodedName("application/json", "fraction_membership")
+  fractionMembership: FractionMembership[];
 }

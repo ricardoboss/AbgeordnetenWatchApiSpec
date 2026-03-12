@@ -10,10 +10,10 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.Constituencies;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
-	...NameQueryOptions;
-	...NumberQueryOptions;
-	...ParliamentPeriodReferenceQueryOptions;
+  ...EntityListQueryOptions;
+  ...NameQueryOptions;
+  ...NumberQueryOptions;
+  ...ParliamentPeriodReferenceQueryOptions;
 }
 
 alias Endpoints = EntityEndpoint<Constituency>;

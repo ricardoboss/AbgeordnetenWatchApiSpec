@@ -7,7 +7,7 @@ namespace AbgeordnetenWatch;
 alias ParliamentPeriodType = "election" | "legislature";
 
 model ParliamentPeriod extends RegularEntity {
-	entity_type: "parliament_period";
+  entity_type: "parliament_period";
 
   @summary("Definiert das Parlament, zu dem diese Parlamentsperiode gehört")
   parliament: Reference<Parliament>;

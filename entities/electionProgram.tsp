@@ -6,19 +6,17 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model ElectionProgram extends Entity {
-	entity_type: "election_program";
+  entity_type: "election_program";
 
-	@encodedName("application/json", "parliament_period")
-	parliamentPeriod: Reference<ParliamentPeriod>;
+  @encodedName("application/json", "parliament_period")
+  parliamentPeriod: Reference<ParliamentPeriod>;
 
-	party: Reference<Party>;
-
-	link: DocumentLink[];
-
-	file: url;
+  party: Reference<Party>;
+  link: DocumentLink[];
+  file: url;
 }
 
 model DocumentLink {
-	uri: url;
-	title: string;
+  uri: url;
+  title: string;
 }

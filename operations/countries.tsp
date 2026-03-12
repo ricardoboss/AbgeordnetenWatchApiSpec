@@ -9,7 +9,7 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.Countries;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
+  ...EntityListQueryOptions;
 }
 
 alias Endpoints = EntityEndpoint<Country>;

@@ -5,12 +5,10 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model Constituency extends RegularEntity {
-	entity_type: "constituency";
+  entity_type: "constituency";
+  name: string;
+  number: integer;
 
-	name: string;
-
-	number: integer;
-
-	@encodedName("application/json", "parliament_period")
-	parliamentPeriod: Reference<ParliamentPeriod>;
+  @encodedName("application/json", "parliament_period")
+  parliamentPeriod: Reference<ParliamentPeriod>;
 }

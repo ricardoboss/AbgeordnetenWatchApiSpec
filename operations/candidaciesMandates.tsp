@@ -10,22 +10,22 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.CandidaciesMandates;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
-	...ParliamentPeriodReferenceQueryOptions;
-	...ElectoralDataReferenceQueryOptions;
-	...StartEndDateQueryOptions;
+  ...EntityListQueryOptions;
+  ...ParliamentPeriodReferenceQueryOptions;
+  ...ElectoralDataReferenceQueryOptions;
+  ...StartEndDateQueryOptions;
 
-	@query
-	id_external_administration?: string;
+  @query
+  id_external_administration?: string;
 
-	@query
-	id_external_administration_description?: string;
+  @query
+  id_external_administration_description?: string;
 
-	@query
-	type?: CandidacyMandateType;
+  @query
+  type?: CandidacyMandateType;
 
-	@query
-	info?: string;
+  @query
+  info?: string;
 }
 
 alias Endpoints = EntityEndpoint<CandidacyMandate>;

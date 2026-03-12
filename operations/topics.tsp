@@ -9,8 +9,8 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.Topics;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
-	...DescriptionQueryOptions;
+  ...EntityListQueryOptions;
+  ...DescriptionQueryOptions;
 }
 
 alias Endpoints = EntityEndpoint<Topic>;

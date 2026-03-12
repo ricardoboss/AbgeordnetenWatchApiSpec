@@ -24,140 +24,140 @@ using TypeSpec.Http;
 @service
 @server("https://www.abgeordnetenwatch.de/api/v2/")
 @info(#{
-	title: "AbgeordnetenWatch API",
-	version: "2.8.2",
-	license: #{
-		name: "CC0 1.0",
-		url: "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
-	},
+  title: "AbgeordnetenWatch API",
+  version: "2.8.2",
+  license: #{
+    name: "CC0 1.0",
+    url: "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
+  },
 })
 @externalDocs("https://www.abgeordnetenwatch.de/api")
 namespace AbgeordnetenWatch {
-	@route("/parliaments")
-	namespace Parliaments {
-		op all is All;
+  @route("/parliaments")
+  namespace Parliaments {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/parliament-periods")
-	namespace ParliamentPeriods {
-		op all is All;
+  @route("/parliament-periods")
+  namespace ParliamentPeriods {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/candidacies-mandates")
-	namespace CandidaciesMandates {
-		op all is All;
+  @route("/candidacies-mandates")
+  namespace CandidaciesMandates {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/politicians")
-	namespace Politicians {
-		op all is All;
+  @route("/politicians")
+  namespace Politicians {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/committees")
-	namespace Committees {
-		op all is All;
+  @route("/committees")
+  namespace Committees {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/committee-memberships")
-	namespace CommitteeMemberships {
-		op all is All;
+  @route("/committee-memberships")
+  namespace CommitteeMemberships {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/polls")
-	namespace Polls {
-		op all is All;
+  @route("/polls")
+  namespace Polls {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/votes")
-	namespace Votes {
-		op all is All;
+  @route("/votes")
+  namespace Votes {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/parties")
-	namespace Parties {
-		op all is All;
+  @route("/parties")
+  namespace Parties {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/fractions")
-	namespace Fractions {
-		op all is All;
+  @route("/fractions")
+  namespace Fractions {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/electoral-lists")
-	namespace ElectoralLists {
-		op all is All;
+  @route("/electoral-lists")
+  namespace ElectoralLists {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/constituencies")
-	namespace Constituencies {
-		op all is All;
+  @route("/constituencies")
+  namespace Constituencies {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/election-program")
-	namespace ElectionPrograms {
-		op all is All;
+  @route("/election-program")
+  namespace ElectionPrograms {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/countries")
-	namespace Countries {
-		op all is All;
+  @route("/countries")
+  namespace Countries {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/cities")
-	namespace Cities {
-		op all is All;
+  @route("/cities")
+  namespace Cities {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 
-	@route("/topics")
-	namespace Topics {
-		op all is All;
+  @route("/topics")
+  namespace Topics {
+    op all is All;
 
-		@route("/{id}")
-		op single is Single;
-	}
+    @route("/{id}")
+    op single is Single;
+  }
 }

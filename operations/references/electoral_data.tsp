@@ -5,10 +5,10 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch;
 
 model ElectoralDataReferenceQueryOptions {
-	@query("electoral_data[entity.list_position]")
-	electoralDataListPosition?: integer; // uint32;
+  @query("electoral_data[entity.list_position]")
+  electoralDataListPosition?: integer; // uint32;
 
-	// TODO: nested references
-	@query("electoral_data[entity.constituency]")
-	electoralDataConstituency?: integer; // uint32;
+  // TODO: nested references
+  @query("electoral_data[entity.constituency]")
+  electoralDataConstituency?: integer; // uint32;
 }

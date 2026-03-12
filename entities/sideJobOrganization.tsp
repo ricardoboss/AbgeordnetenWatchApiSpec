@@ -7,14 +7,14 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model SidejobOrganization extends Entity {
-	entity_type: "side_job_organization";
+  entity_type: "side_job_organization";
 
-	@encodedName("application/json", "field_city")
-	fieldCity: SubReference<City>;
+  @encodedName("application/json", "field_city")
+  fieldCity: SubReference<City>;
 
-	@encodedName("application/json", "field_country")
-	fieldCountry: SubReference<Country>;
+  @encodedName("application/json", "field_country")
+  fieldCountry: SubReference<Country>;
 
-	@encodedName("application/json", "field_topics")
-	fieldTopics: Reference<Topic>[];
+  @encodedName("application/json", "field_topics")
+  fieldTopics: Reference<Topic>[];
 }

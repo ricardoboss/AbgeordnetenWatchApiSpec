@@ -5,10 +5,9 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model ElectoralList extends RegularEntity {
-	entity_type: "electoral_list";
+  entity_type: "electoral_list";
+  name: string;
 
-	name: string;
-
-	@encodedName("application/json", "parliament_period")
-	parliamentPeriod: Reference<ParliamentPeriod>;
+  @encodedName("application/json", "parliament_period")
+  parliamentPeriod: Reference<ParliamentPeriod>;
 }

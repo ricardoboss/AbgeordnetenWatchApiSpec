@@ -5,13 +5,13 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model Fraction extends RegularEntity {
-	entity_type: "fraction";
+  entity_type: "fraction";
 
-	@encodedName("application/json", "full_name")
-	fullName: string;
+  @encodedName("application/json", "full_name")
+  fullName: string;
 
-	@encodedName("application/json", "short_name")
-	shortName: string;
+  @encodedName("application/json", "short_name")
+  shortName: string;
 
-	legislature: Reference<ParliamentPeriod>;
+  legislature: Reference<ParliamentPeriod>;
 }

@@ -4,13 +4,12 @@ import "../framework/reference.tsp";
 namespace AbgeordnetenWatch;
 
 model FractionMembership {
-	label: string;
+  label: string;
+  faction: Reference<Fraction>;
 
-	faction: Reference<Fraction>;
+  @encodedName("application/json", "valid_from")
+  validFrom: plainDate;
 
-	@encodedName("application/json", "valid_from")
-	validFrom: plainDate;
-
-	@encodedName("application/json", "valid_until")
-	validUntil: plainDate;
+  @encodedName("application/json", "valid_until")
+  validUntil: plainDate;
 }

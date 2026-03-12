@@ -9,46 +9,46 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.Politicians;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
+  ...EntityListQueryOptions;
 
-	@query
-	first_name?: string;
+  @query
+  first_name?: string;
 
-	@query
-	last_name?: string;
+  @query
+  last_name?: string;
 
-	@query
-	birth_name?: string;
+  @query
+  birth_name?: string;
 
-	@query
-	sex?: "m" | "f" | "d";
+  @query
+  sex?: "m" | "f" | "d";
 
-	@query
-	year_of_birth?: integer;
+  @query
+  year_of_birth?: integer;
 
-	@query
-	party_past?: string;
+  @query
+  party_past?: string;
 
-	@query
-	education?: string;
+  @query
+  education?: string;
 
-	@query
-	residence?: string;
+  @query
+  residence?: string;
 
-	@query
-	statistic_questions?: integer;
+  @query
+  statistic_questions?: integer;
 
-	@query
-	statistic_questions_answered?: integer;
+  @query
+  statistic_questions_answered?: integer;
 
-	@query
-	qid_wikidata?: string;
+  @query
+  qid_wikidata?: string;
 
-	@query
-	ext_id_bundestagsverwaltung?: string;
+  @query
+  ext_id_bundestagsverwaltung?: string;
 
-	@query
-	field_title?: string;
+  @query
+  field_title?: string;
 }
 
 alias Endpoints = EntityEndpoint<Politician>;

@@ -9,7 +9,7 @@ using TypeSpec.Http;
 namespace AbgeordnetenWatch.Cities;
 
 model AllQueryOptions {
-	...EntityListQueryOptions;
+  ...EntityListQueryOptions;
 }
 
 alias Endpoints = EntityEndpoint<City>;

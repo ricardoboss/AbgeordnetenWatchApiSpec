@@ -4,19 +4,19 @@ import "../entities/entity.tsp";
 namespace AbgeordnetenWatch;
 
 model ListResponse<T extends Entity> {
-	meta: Meta;
+  meta: Meta;
 
-	@pageItems
-	data: T[];
+  @pageItems
+  data: T[];
 }
 
 model EntityResponse<T extends Entity> {
-	meta: Meta;
-	data: T;
+  meta: Meta;
+  data: T;
 }
 
 @error
 model ErrorResponse {
-	meta: Meta;
-	data: {};
+  meta: Meta;
+  data: {};
 }
