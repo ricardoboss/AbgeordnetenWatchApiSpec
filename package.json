@@ -14,7 +14,9 @@
   "scripts": {
     "watch": "tsp compile main.tsp --watch",
     "build": "tsp compile main.tsp",
-    "build-strict": "tsp compile main.tsp --warn-as-error",
-    "build-trace": "tsp compile main.tsp --trace '*'"
+    "build:strict": "tsp compile main.tsp --warn-as-error",
+    "build:trace": "tsp compile main.tsp --trace '*'",
+    "format": "tsp format .",
+    "format:check": "tsp format . --check"
   }
 }
