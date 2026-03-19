@@ -10,7 +10,10 @@ model CurrentProjectReferenceQueryOptions {
   @query("current_project")
   currentProject?: integer; // uint32;
 
-  @query
+  @query("current_project[entity.type]")
+  currentProjectType?: ParliamentPeriodType;
+
+  @query("current_project[entity.label]")
   currentProjectLabel?: string;
 
   @query("current_project[entity.label][sw]")

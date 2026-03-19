@@ -891,6 +891,7 @@ paths:
         - $ref: '#/components/parameters/PaginationQueryOptions.page'
         - $ref: '#/components/parameters/PaginationQueryOptions.pager_limit'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProject'
+        - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectType'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabel'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelStartsWith'
         - $ref: '#/components/parameters/CurrentProjectReferenceQueryOptions.currentProjectLabelContains'
@@ -1577,7 +1578,7 @@ components:
         format: date
       explode: false
     CurrentProjectReferenceQueryOptions.currentProjectLabel:
-      name: currentProjectLabel
+      name: current_project[entity.label]
       in: query
       required: false
       schema:
@@ -1671,6 +1672,16 @@ components:
       schema:
         type: string
         format: date
+      explode: false
+    CurrentProjectReferenceQueryOptions.currentProjectType:
+      name: current_project[entity.type]
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+          - election
+          - legislature
       explode: false
     DescriptionQueryOptions.description:
       name: description
