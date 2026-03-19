@@ -10,7 +10,7 @@ model AllQueryOptions {
   ...EntityListQueryOptions;
 
   @query
-  type?: string;
+  type?: ParliamentPeriodType;
 
   @query
   election_date?: plainDate;
